@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cruds</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="main">
+      <div class="head">
+        <h1>Cruds</h1>
+        <p>Products Management system</p>
+      </div>
+      <div class="inputs">
+        <input type="text" placeholder="Title" value="" id="title" />
+        <div class="price">
+          <input
+            onkeyup="getTotal()"
+            type="number"
+            id="price"
+            placeholder="Price"
+          />
+          <input
+            onkeyup="getTotal()"
+            type="number"
+            id="taxes"
+            placeholder="Taxes"
+          />
+          <input
+            onkeyup="getTotal()"
+            type="number"
+            id="ads"
+            placeholder="Ads"
+          />
+          <input
+            onkeyup="getTotal()"
+            type="number"
+            id="discount"
+            placeholder="Discount"
+          />
+          <span id="total"></span>
+        </div>
+        <input type="number" id="count" placeholder="Count" />
+        <input type="text" id="category" placeholder="Category" /> <br />
+        <button id="create">Create</button>
+      </div>
+      <div class="outputs">
+        <div class="search">
+          <input
+            onkeyup="searchProduct(this.value)"
+            type="search"
+            id="search"
+            placeholder="Search"
+          />
+          <div class="btnsearch">
+            <button onclick="getSearchMode(this.id)" id="search-title">
+              Search By Title
+            </button>
+            <button onclick="getSearchMode(this.id)" id="search-category">
+              Search By Category
+            </button>
+          </div>
+        </div>
+        <div id="deleteAll"></div>
+        <hr />
+        <table>
+          <tr>
+            <th>ID</th>
+            <th>TITLE</th>
+            <th>PRICE</th>
+            <th>TAXES</th>
+            <th>ADS</th>
+            <th>DISCOUNT</th>
+            <th>TOTAL</th>
+            <th>CATEGORY</th>
+            <th>DELETE</th>
+            <th>UPDATE</th>
+          </tr>
+          <tbody id="tbody"></tbody>
+        </table>
+      </div>
+    </div>
+    <script src="base.js"></script>
+  </body>
+</html>
